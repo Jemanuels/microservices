@@ -1,0 +1,634 @@
+{
+	"info": {
+		"_postman_id": "1c66224b-2df8-4c24-89ba-b945635cb514",
+		"name": "Micro Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7658454"
+	},
+	"item": [
+		{
+			"name": "Docker Env",
+			"item": [
+				{
+					"name": "Platform Service",
+					"item": [
+						{
+							"name": "Get All Platforms",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/platform",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"platform"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Platform",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Docker\",\r\n    \"publisher\": \"Microsoft\",\r\n    \"cost\": \"Free\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/platform",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"platform"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Command Service",
+					"item": []
+				}
+			]
+		},
+		{
+			"name": "Local Dev",
+			"item": [
+				{
+					"name": "CommandService",
+					"item": [
+						{
+							"name": "Create Platform",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "id",
+										"value": "1",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"name\": \"IIS Server\",\r\n        \"publisher\": \"Microsoft\",\r\n        \"cost\": \"Free\"\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5180/api/commands/platform",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5180",
+									"path": [
+										"api",
+										"commands",
+										"platform"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Command for Platform",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "id",
+										"value": "1",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"HowTo\": \"Build a .net project\",\r\n        \"CommandLine\": \"dotnet build\"\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5180/api/commands/platforms/5/command",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5180",
+									"path": [
+										"api",
+										"commands",
+										"platforms",
+										"5",
+										"command"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Platforms",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5180/api/commands/platform",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5180",
+									"path": [
+										"api",
+										"commands",
+										"platform"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all Commands for Platform",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5180/api/commands/platforms/4/command/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5180",
+									"path": [
+										"api",
+										"commands",
+										"platforms",
+										"4",
+										"command",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all Command for Platform",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5180/api/commands/platforms/1/command/4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5180",
+									"path": [
+										"api",
+										"commands",
+										"platforms",
+										"1",
+										"command",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get one Platform",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "id",
+										"value": "1",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:5180/api/commands/platforms/4/command/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5180",
+									"path": [
+										"api",
+										"commands",
+										"platforms",
+										"4",
+										"command",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Test Inbound Connection",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5180/api/commands/platform",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5180",
+									"path": [
+										"api",
+										"commands",
+										"platform"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "PlatformService",
+					"item": [
+						{
+							"name": "Get All Platforms",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5252/api/platform",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5252",
+									"path": [
+										"api",
+										"platform"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get one Platform",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "id",
+										"value": "1",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:5003/api/platforms/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5003",
+									"path": [
+										"api",
+										"platforms",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Platform",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "id",
+										"value": "1",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"CPC\",\r\n    \"publisher\": \"CyberArk\",\r\n    \"cost\": \"License per user\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5252/api/platform",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5252",
+									"path": [
+										"api",
+										"platform"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "K8S",
+			"item": [
+				{
+					"name": "Platform  Service(Node Port)",
+					"item": [
+						{
+							"name": "Get All Platforms",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:30138/api/platform",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "30138",
+									"path": [
+										"api",
+										"platform"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get one Platform",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "id",
+										"value": "1",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:30138/api/platform/3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "30138",
+									"path": [
+										"api",
+										"platform",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Platform",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "id",
+										"value": "1",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"name\": \"Consul\",\r\n        \"publisher\": \"Hashicrop\",\r\n        \"cost\": \"Free\"\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:30138/api/platform",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "30138",
+									"path": [
+										"api",
+										"platform"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Platform  Service(Nginx)",
+					"item": [
+						{
+							"name": "Get All Platforms",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://acme.com/api/platform",
+									"protocol": "http",
+									"host": [
+										"acme",
+										"com"
+									],
+									"path": [
+										"api",
+										"platform"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get one Platform",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "id",
+										"value": "1",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://acme.com/api/platform/4",
+									"protocol": "http",
+									"host": [
+										"acme",
+										"com"
+									],
+									"path": [
+										"api",
+										"platform",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Platform",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "id",
+										"value": "1",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Vagrant11\",\r\n    \"publisher\": \"Hashicrop\",\r\n    \"cost\": \"Free\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://acme.com/api/platform",
+									"protocol": "http",
+									"host": [
+										"acme",
+										"com"
+									],
+									"path": [
+										"api",
+										"platform"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://dgulden.com:30704/api/platforms/1",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://dgulden.com:30704/api/platforms/1",
+									"protocol": "http",
+									"host": [
+										"dgulden",
+										"com"
+									],
+									"port": "30704",
+									"path": [
+										"api",
+										"platforms",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Commands Service(Nginx)",
+					"item": [
+						{
+							"name": "Get all Platforms",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://acme.com/api/commands/platform",
+									"protocol": "http",
+									"host": [
+										"acme",
+										"com"
+									],
+									"path": [
+										"api",
+										"commands",
+										"platform"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Command for Platform",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"HowTo\": \"Build a .net project\",\r\n        \"CommandLine\": \"dotnet build\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://acme.com/api/commands/platforms/2002/command",
+									"protocol": "http",
+									"host": [
+										"acme",
+										"com"
+									],
+									"path": [
+										"api",
+										"commands",
+										"platforms",
+										"2002",
+										"command"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
